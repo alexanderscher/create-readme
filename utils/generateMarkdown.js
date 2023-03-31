@@ -44,12 +44,19 @@ function generateLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  var licenseBadge = generateBadge(data.license);
-  var licenseUrl = generateLicenseUrl(data.license);
-  var result = `# ${userResponse.title}
+  var licenseBadge = generateBadge(license);
+  var licenseUrl = generateLicenseUrl(license);
+  return `
 \n![License](${licenseBadge} \n
-${userResponse.description}
-\n## Table of Contents
+\n## License
+\nThis project is licensed under the ${license} - see the [License](${licenseUrl}) page.`;
+}
+
+// TODO: Create a function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.title}
+  \n${data.description}
+  \n## Table of Contents
 \n* [Installation](#Installation)
 \n* [Instructions](#Instructions)
 \n* [Contributors](#Contributors)
@@ -57,27 +64,18 @@ ${userResponse.description}
 \n* [License](#License)
 \n* [Author](#Author)
 \n## Installation
-\n${userResponse.installation}
+\n${data.installation}
 \n## Usage
-\n${userResponse.usage}
+\n${data.usage}
 \n## Contributing
-\n${userResponse.contributing}
+\n${data.contributing}
 \n## Tests
-\n${userResponse.tests}
-\n## License
-\nThis project is licensed under the ${userResponse.license} - see the [License](${licenseUrl}) page.
+\n${data.tests}
 \n## Author
-\n![ProfileImage](${userInfo.avatar_url})
-\n${userInfo.name}
-\nLocation: ${userInfo.location}
-\n[GitHub](${userInfo.html_url})`;
-}
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-
-  `;
+\n![ProfileImage](${data.avatar_url})
+\n${data.name}
+\nLocation: ${data.location}
+\n[GitHub](${data.html_url})`;
 }
 
 module.exports = generateMarkdown;
