@@ -54,7 +54,7 @@ function generateMarkdown(data) {
 \n* [Contributors](#Contributors)
 \n* [Tests](#Tests)
 \n* [License](#License)
-\n* [Author](#Author)
+\n* [Author](#Questions)
 \n## Installation
 \n${data.installation}
 \n## Usage
@@ -63,7 +63,13 @@ function generateMarkdown(data) {
 \n${data.contributing}
 \n## Tests
 \n${data.tests}
-${renderLicenseSection(data.license)}`;
+${renderLicenseSection(data.license)};
+\n## Questions
+\n Click https://github.com/${
+    data.username
+  } to visit my github profile link too see other projects.
+\n
+\nPlease email me at ${data.email} if you have any questiuons`;
 }
 
 module.exports = generateMarkdown;
