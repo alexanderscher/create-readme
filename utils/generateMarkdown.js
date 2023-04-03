@@ -1,16 +1,11 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== null) {
     return `https://img.shields.io/badge/License-${license}-blue.svg`;
   } else return "";
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function generateLicenseLink(license) {
   let path;
-
   switch (license) {
     case "GNU AGPLv3":
       path = "agpl-3.0";
@@ -41,18 +36,15 @@ function generateLicenseLink(license) {
   return `https://choosealicense.com/licenses/${path}/`;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
-  var licenseBadge = generateBadge(license);
-  var licenseUrl = generateLicenseUrl(license);
+  var licenseBadge = renderLicenseBadge(license);
+  var licenseUrl = generateLicenseLink(license);
   return `
-\n![License](${licenseBadge} \n
 \n## License
+\n![License](${licenseBadge}) \n
 \nThis project is licensed under the ${license} - see the [License](${licenseUrl}) page.`;
 }
 
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
   \n${data.description}
@@ -71,11 +63,7 @@ function generateMarkdown(data) {
 \n${data.contributing}
 \n## Tests
 \n${data.tests}
-\n## Author
-\n![ProfileImage](${data.avatar_url})
-\n${data.name}
-\nLocation: ${data.location}
-\n[GitHub](${data.html_url})`;
+${renderLicenseSection(data.license)}`;
 }
 
 module.exports = generateMarkdown;

@@ -1,20 +1,20 @@
 # a
-
+  
 a
-
+  
 ## Table of Contents
 
-- [Installation](#Installation)
+* [Installation](#Installation)
 
-- [Instructions](#Instructions)
+* [Instructions](#Instructions)
 
-- [Contributors](#Contributors)
+* [Contributors](#Contributors)
 
-- [Tests](#Tests)
+* [Tests](#Tests)
 
-- [License](#License)
+* [License](#License)
 
-- [Author](#Author)
+* [Author](#Author)
 
 ## Installation
 
@@ -32,12 +32,10 @@ a
 
 a
 
-## Author
 
-![ProfileImage](undefined)
+## License
 
-undefined
+![License](https://img.shields.io/badge/License-MIT-blue.svg) 
 
-Location: undefined
 
-[GitHub](undefined)
+This project is licensed under the MIT - see the [License](https://choosealicense.com/licenses/undefined/) page.
